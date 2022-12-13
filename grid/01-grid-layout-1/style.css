@@ -4,14 +4,17 @@ body, html {
 }
 
 .container {
+  --row: 100px;
+  --col: 300px;
   text-align: center;
   height: 100%;
   padding: 16px;
   box-sizing: border-box;
   display: grid;
-  grid-template: repeat(8, 1fr) / repeat(3, 1fr);
-  grid-template-areas: "header header header" "sidebar nav nav" "sidebar article article" "sidebar article article" "sidebar article article" "sidebar article article" "sidebar article article" "footer footer footer";
-  gap: 1%;
+  grid-template: repeat(2, var(--row)) calc(var(--row)*5) var(--row) / var(--col) calc(var(--col)*3);
+  grid-template-areas: "header header" "sidebar nav"
+  "sidebar article" "footer footer";
+  gap: 15px;
 }
 
 .container div {
